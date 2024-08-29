@@ -36,40 +36,18 @@
     </head>
     <body>
         <script>
-            var currentPlayer = "X";
-            function place(box) {
-                if (box.innerText != "") return; 
-                box.innerText = currentPlayer;
-                currentPlayer == "X" ? currentPlayer = "O" : currentPlayer = "X"
-                checkGameBoard();
-            }
-            function checkGameBoard() {
-                var first = document.getElementById("0_0").innerText;
-                var second = document.getElementById("1_0").innerText;
-                var third = document.getElementById("2_0").innerText;
-                var fourth = document.getElementById("0_1").innerText;
-                var fifth = document.getElementById("1_1").innerText;
-                var sixth = document.getElementById("2_1").innerText;
-                var seventh = document.getElementById("0_2").innerText;
-                var eighth = document.getElementById("1_2").innerText;
-                var ninth = document.getElementById("2_2").innerText;
-                if (first == "") return;
-                if(first == second && first == third) {
-                    alert("tic-tac-toe, three in a row! " + first + " wins!");
-                }
-            }
             function bigImage(link) {
-                link.style.width = "40px";
-                link.style.height = "40px";
+                link.style.width = "90px";
+                link.style.height = "90px";
             }
             function normalImage(link) {
                 if (link == "troop 168 facebook") {
-                    link.style.width = "35px";
-                    link.style.height = "35px";
+                    link.style.width = "70px";
+                    link.style.height = "70px";
                 }
                 else {
-                    link.style.width = "30px";
-                    link.style.height = "30px";
+                    link.style.width = "60px";
+                    link.style.height = "60px";
                 }
             }
         </script>
