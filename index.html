@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Troop 168 OKC | Boy Scouts of America</title>
+        <link rel="icon" href="https://www.scouting.org/wp-content/uploads/2019/10/cropped-site-icon-1-32x32.png" type="image/x-icon">
+        <style>
+            html {
+                font-size: large;
+            }
+
+            body {
+                background-color: rgb(255, 255, 255);
+                color: rgb(0, 0, 0);
+            }
+            a {
+                color:rgb(13, 73, 238)
+            }
+            a:visited {
+                color:rgb(13, 73, 238)
+            }
+            a:hover, a:active {
+                color: rgb(83, 210, 214)
+            }
+            .row div {
+                padding: 10px;
+                border: 2px solid black;
+                height: 30px;
+                width: 30px;
+                float: left;
+            }
+            .row {
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            var currentPlayer = "X";
+            function place(box) {
+                if (box.innerText != "") return; 
+                box.innerText = currentPlayer;
+                currentPlayer == "X" ? currentPlayer = "O" : currentPlayer = "X"
+                checkGameBoard();
+            }
+            function checkGameBoard() {
+                var first = document.getElementById("0_0").innerText;
+                var second = document.getElementById("1_0").innerText;
+                var third = document.getElementById("2_0").innerText;
+                var fourth = document.getElementById("0_1").innerText;
+                var fifth = document.getElementById("1_1").innerText;
+                var sixth = document.getElementById("2_1").innerText;
+                var seventh = document.getElementById("0_2").innerText;
+                var eighth = document.getElementById("1_2").innerText;
+                var ninth = document.getElementById("2_2").innerText;
+                if (first == "") return;
+                if(first == second && first == third) {
+                    alert("tic-tac-toe, three in a row! " + first + " wins!");
+                }
+            }
+            function bigImage(link) {
+                link.style.width = "40px";
+                link.style.height = "40px";
+            }
+            function normalImage(link) {
+                if (link == "troop 168 facebook") {
+                    link.style.width = "35px";
+                    link.style.height = "35px";
+                }
+                else {
+                    link.style.width = "30px";
+                    link.style.height = "30px";
+                }
+            }
+        </script>
+        <p style="text-align: center;"><img src="top-image.png" alt="top image" title="entrance photo" style="width: 100%; height: 100%; object-fit: contain;"></p>
+        <h1 style="text-align:center">Site still under construction, see below for social media accounts</h1>
+        <hr>
+        <h3>SOCIALS:</h3>
+        <a href="https://www.instagram.com/bsatroop168okc/"><img onmouseover="bigImage(this)" onmouseout="normalImage(this)" src="instagram-logo.png" alt="instagram link" title="troop 168 instagram" width="30" height="30" loading="lazy"></a>
+        <a href="https://www.youtube.com/@boyscouttroop1685"><img onmouseover="bigImage(this)" onmouseout="normalImage(this)" src="youtube-logo.png" alt="youtube link" title="troop 168 youtube" width="30" height="30" loading="lazy"></a>
+        <a href="https://www.facebook.com/troop168"><img onmouseover="bigImage(this)" onmouseout="normalImage(this)" src="facebook-logo.png" alt="facebook link" title="troop 168 facebook" width="35" height="35" loading="lazy"></a>
+        <br>
+        <br>
+        <a href="about.html">About Us</a>
+        <a href="form.html">Contact Us</a>
+        
+        <div>
+            <div class="row">
+                <div id="0_0" onclick="place(this)"></div>
+                <div id="1_0" onclick="place(this)"></div>
+                <div id="2_0" onclick="place(this)"></div>
+            </div>
+            <div class="row">
+                <div id="0_1" onclick="place(this)"></div>
+                <div id="1_1" onclick="place(this)"></div>
+                <div id="2_1" onclick="place(this)"></div>
+            </div>
+            <div class="row">
+                <div id="0_2" onclick="place(this)"></div>
+                <div id="1_2" onclick="place(this)"></div>
+                <div id="2_2" onclick="place(this)"></div>
+            </div>
+        </div>
+    </body>
+</html>
